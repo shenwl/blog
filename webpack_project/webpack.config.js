@@ -1,6 +1,8 @@
 const {resolve} = require('path');
 
 module.exports = {
+  // mode默认是production
+  mode: 'production',
   entry: {
     main: './src/index.js',
   },
