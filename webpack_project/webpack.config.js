@@ -2,7 +2,8 @@ const {resolve} = require('path');
 
 module.exports = {
   // mode默认是production
-  mode: 'production',
+  // mode设置development, 代码不会压缩
+  mode: 'development',
   entry: {
     main: './src/index.js',
   },
