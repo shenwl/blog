@@ -7,8 +7,18 @@ module.exports = {
   entry: {
     main: './src/index.js',
   },
+  module: {
+    rules: [
+      {
+        test: /\.jpeg$/,
+        use: {
+          loader: 'file-loader',
+        }
+      }
+    ]
+  },
   output: {
     filename: 'main.js',
     path: resolve(__dirname, './dist'),
-  }
+  },
 };
