@@ -1,15 +1,14 @@
 import header from './components/header';
 import avatar from './assets/avatar.jpeg';
+import './index.css';
 
 const dom = document.getElementById('root');
-
 dom.append(header());
 
-console.log(avatar);
 
 const img = document.createElement('img');
-
 img.src = avatar;
+img.classList.add('avatar');
 
 dom.append(img);
 
