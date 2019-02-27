@@ -5,4 +5,8 @@ const dom = document.getElementById('root');
 
 dom.append(header());
 
+console.log(avatar);
+
+
+
 
