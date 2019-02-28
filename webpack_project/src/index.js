@@ -1,16 +1,9 @@
 import header from './components/header';
-import avatar from './assets/avatar.jpeg';
-import './index.less';
+import avatar from './components/avatar';
 
 const dom = document.getElementById('root');
 dom.append(header());
-
-
-const img = document.createElement('img');
-img.src = avatar;
-img.classList.add('avatar');
-
-dom.append(img);
+dom.append(avatar());
 
 
 
