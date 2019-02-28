@@ -1,6 +1,6 @@
 import header from './components/header';
 import avatar from './assets/avatar.jpeg';
-import './index.css';
+import './index.less';
 
 const dom = document.getElementById('root');
 dom.append(header());
