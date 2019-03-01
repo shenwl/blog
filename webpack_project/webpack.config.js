@@ -1,5 +1,6 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   // mode默认是production，但是不写会报warning
@@ -43,10 +44,13 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'main.js',
+    filename: 'bundle.js',
     path: resolve(__dirname, './dist'),
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: resolve(__dirname, './index.html'),
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: resolve(__dirname, './index.html'),
+    }),
+    new CleanWebpackPlugin([resolve(__dirname, './dist')])
+  ],
 };
