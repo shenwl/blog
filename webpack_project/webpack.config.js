@@ -45,6 +45,7 @@ module.exports = {
     ]
   },
   output: {
+    publicPath: "http://xxx.cdn.com",
     filename: '[name].js',
     path: resolve(__dirname, './dist'),
   },
