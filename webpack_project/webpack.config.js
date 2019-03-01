@@ -1,4 +1,5 @@
 const {resolve} = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // mode默认是production，但是不写会报warning
@@ -45,4 +46,5 @@ module.exports = {
     filename: 'main.js',
     path: resolve(__dirname, './dist'),
   },
+  plugins: [new HtmlWebpackPlugin()],
 };
