@@ -46,5 +46,7 @@ module.exports = {
     filename: 'main.js',
     path: resolve(__dirname, './dist'),
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({
+    template: resolve(__dirname, './index.html'),
+  })],
 };
