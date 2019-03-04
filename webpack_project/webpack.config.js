@@ -6,7 +6,7 @@ module.exports = {
   // mode默认是production，但是不写会报warning
   // mode设置development, 代码不会压缩
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'cheap-inline-source-map',
   entry: {
     main: './src/index.js',
   },
