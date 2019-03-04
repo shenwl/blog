@@ -6,7 +6,7 @@ module.exports = {
   // mode默认是production，但是不写会报warning
   // mode设置development, 代码不会压缩
   mode: 'development',
-  devtool: 'eval',
+  devtool: 'cheap-module-eval-source-map',
   entry: {
     main: './src/index.js',
   },
