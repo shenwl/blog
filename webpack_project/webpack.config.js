@@ -8,7 +8,6 @@ module.exports = {
   mode: 'development',
   entry: {
     main: './src/index.js',
-    sub: './src/index.js',
   },
   module: {
     rules: [
@@ -45,7 +44,6 @@ module.exports = {
     ]
   },
   output: {
-    publicPath: "http://xxx.cdn.com",
     filename: '[name].js',
     path: resolve(__dirname, './dist'),
   },
