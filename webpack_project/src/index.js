@@ -6,5 +6,4 @@ dom.append(header());
 dom.append(avatar());
 
 
-
-
+cnsole.log("hello")
