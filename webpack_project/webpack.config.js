@@ -1,6 +1,7 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   // mode默认是production，但是不写会报warning
@@ -17,6 +18,8 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     open: true,
+    hot: true,
+    hotOnly: true,
     proxy: {
       '/api': 'http://localhost:3000'
     }
@@ -59,6 +62,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: resolve(__dirname, './index.html'),
     }),
-    new CleanWebpackPlugin([resolve(__dirname, './dist')])
+    new CleanWebpackPlugin([resolve(__dirname, './dist')]),
+    new webpack.HotModuleReplacementPlugin()
   ],
 };
