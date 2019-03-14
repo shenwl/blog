@@ -1,3 +1,5 @@
+import '@babel/polyfill';
+
 import './style.css';
 import header from './components/header';
 import avatar from './components/avatar';
