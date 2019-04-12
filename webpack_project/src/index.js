@@ -1,21 +1,14 @@
 import '@babel/polyfill';
 
-import './style.css';
-import header from './components/header';
-import avatar from './components/avatar';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const dom = document.getElementById('root');
-dom.append(header());
-dom.append(avatar());
+class App extends React.Component {
+  render() {
+    return (
+      <div>React App</div>
+    );
+  }
+}
 
-console.log("hello world");
-
-const btn = document.createElement('button');
-btn.innerText = '新增';
-document.body.appendChild(btn);
-
-btn.onclick = () => {
-  const div = document.createElement('div');
-  div.innerHTML = 'item';
-  document.body.appendChild(div);
-};
+ReactDOM.render(<App/>, document.getElementById('root'));
