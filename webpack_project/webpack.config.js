@@ -35,6 +35,7 @@ module.exports = {
             ["@babel/preset-env", {
               targets: {
                 chrome: "67",
+                ie: "9",
               },
               useBuiltIns: 'usage',
             }]
