@@ -33,6 +33,9 @@ module.exports = {
         options: {
           presets: [
             ["@babel/preset-env", {
+              targets: {
+                chrome: "67",
+              },
               useBuiltIns: 'usage',
             }]
           ]
