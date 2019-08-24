@@ -1,12 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { add } from './utils';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>React App</div>
-    );
-  }
-}
+console.log(add(1, 2));
 
-ReactDOM.render(<App/>, document.getElementById('root'));
