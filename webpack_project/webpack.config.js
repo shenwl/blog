@@ -6,8 +6,9 @@ const webpack = require('webpack');
 module.exports = {
   // mode默认是production，但是不写会报warning
   // mode设置development, 代码不会压缩
-  mode: 'development',
-  devtool: 'cheap-module-eval-source-map',
+  // mode: 'development',
+  mode: 'production',
+  devtool: 'cheap-module-source-map',
   entry: {
     main: './src/index.js',
   },
