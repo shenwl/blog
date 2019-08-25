@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --config build/webpack.dev.js",
+    "dev:build": "webpack --config build/webpack.dev.js",
     "build": "webpack  --config build/webpack.prod.js"
   },
   "keywords": [],
