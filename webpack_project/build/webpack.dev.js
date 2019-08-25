@@ -26,4 +26,7 @@ module.exports = {
     new CleanWebpackPlugin([resolve(__dirname, '../dist')]),
     new webpack.HotModuleReplacementPlugin()
   ],
+  optimization: {
+    usedExports: true,
+  }
 };
