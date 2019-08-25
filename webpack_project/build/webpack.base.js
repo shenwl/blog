@@ -59,6 +59,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: resolve(__dirname, '../index.html'),
     }),
-    new CleanWebpackPlugin([resolve(__dirname, '../dist')]),
+    new CleanWebpackPlugin([resolve(__dirname, '../dist')], {
+      root: resolve(__dirname, '../'),
+    }),
   ],
 };
