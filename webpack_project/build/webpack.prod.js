@@ -1,16 +1,9 @@
-const { resolve } = require('path');
 const baseConfig = require('./webpack.base');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const merge = require('webpack-merge');
 
-module.exports = {
-  ...baseConfig,
+const prodConfig = {
   mode: 'production',
   devtool: 'cheap-module-source-map',
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: resolve(__dirname, '../index.html'),
-    }),
-    new CleanWebpackPlugin([resolve(__dirname, '../dist')]),
-  ],
 };
+
+module.exports = merge(baseConfig, prodConfig);
