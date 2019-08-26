@@ -1,6 +1,10 @@
-import { add } from './utils';
-import _ from 'lodash';
+async function getComponent() {
+  const _ = await import('lodash');
+  const el = document.createElement('div');
+  el.innerHTML = _.join(['h', 'm', 'r']);
+  return el;
+}
 
-console.log(add(1, 2));
-console.log(_.join(['a', 'b', 'c']));
-
+getComponent().then(el => {
+  document.body.appendChild(el);
+});

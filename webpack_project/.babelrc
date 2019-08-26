@@ -1,12 +1,15 @@
 {
-   "presets": [
-     ["@babel/preset-env", {
-       "targets": {
-         "chrome": "67",
-         "ie": "9"
-       },
-       "useBuiltIns": "usage"
-     }],
-     "@babel/preset-react"
-   ]
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "chrome": "67",
+        "ie": "9"
+      },
+      "useBuiltIns": "usage"
+    }],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "babel-plugin-dynamic-import-webpack"
+  ]
 }
