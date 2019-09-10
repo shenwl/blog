@@ -1,8 +1,6 @@
-const baseConfig = require('./webpack.base');
-const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const prodConfig = {
+module.exports = {
   mode: 'production',
   devtool: 'cheap-module-source-map',
   module: {
@@ -37,5 +35,3 @@ const prodConfig = {
     }),
   ],
 };
-
-module.exports = merge(baseConfig, prodConfig);

@@ -1,8 +1,6 @@
-const baseConfig = require('./webpack.base');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
 
-const devConfig = {
+module.exports = {
   // mode默认是production，但是不写会报warning
   // mode设置development, 代码不会压缩
   mode: 'development',
@@ -42,5 +40,3 @@ const devConfig = {
     new webpack.HotModuleReplacementPlugin()
   ],
 };
-
-module.exports = merge(baseConfig, devConfig);
