@@ -1,5 +1,4 @@
-document.addEventListener('click', () => {
-  import('./handleClick.js').then(({ default: handleClick }) => {
-    handleClick();
-  });
-});
+import './style.css';
+
+
+console.log("hello")
