@@ -7,6 +7,28 @@ const devConfig = {
   // mode设置development, 代码不会压缩
   mode: 'development',
   devtool: 'cheap-eval-module-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.less/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+            }
+          },
+          'less-loader',
+          'postcss-loader'
+        ],
+      },
+    ]
+  },
   devServer: {
     contentBase: '../dist',
     open: true,

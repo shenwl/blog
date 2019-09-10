@@ -34,25 +34,6 @@ module.exports = {
           loader: 'file-loader'
         }
       },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
-      },
-      {
-        test: /\.less/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              modules: true,
-            }
-          },
-          'less-loader',
-          'postcss-loader'
-        ],
-      },
     ]
   },
   plugins: [
