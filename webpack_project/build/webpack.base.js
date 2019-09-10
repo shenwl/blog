@@ -7,8 +7,8 @@ module.exports = {
     main: './src/index.js',
   },
   output: {
-    filename: '[name].js',
-    chunkFilename: '[name].chunk.js',
+    filename: '[name].[contenthash].js',
+    chunkFilename: '[name].[contenthash].chunk.js',
     path: resolve(__dirname, '../dist'),
   },
   module: {
