@@ -8,6 +8,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
     path: resolve(__dirname, '../dist'),
   },
   module: {
@@ -48,10 +49,6 @@ module.exports = {
     usedExports: true,
     splitChunks: {
       chunks: 'all',
-      cacheGroups: {
-        vendors: false,
-        default: false,
-      }
     },
   },
 };
