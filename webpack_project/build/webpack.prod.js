@@ -35,7 +35,7 @@ module.exports = {
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
     new workboxPlugin.GenerateSW({
-      clientsClain: true,
+      clientsClaim: true,
       skipWaiting: true,
     }),
   ],
