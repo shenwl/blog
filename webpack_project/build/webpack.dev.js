@@ -32,6 +32,8 @@ module.exports = {
     open: true,
     hot: true,
     hotOnly: true,
+    // 支持SPA路由
+    historyApiFallback: true,
     proxy: {
       '/api': 'http://localhost:3000'
     }
