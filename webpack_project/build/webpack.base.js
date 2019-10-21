@@ -5,15 +5,23 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    main: "./src/index.js",
+    main: "./src/index.tsx",
   },
   output: {
     filename: "[name].[contenthash].js",
     chunkFilename: "[name].[contenthash].chunk.js",
     path: resolve(__dirname, "../dist"),
   },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+  },
   module: {
     rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        loader: "ts-loader",
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
