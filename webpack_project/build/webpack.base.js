@@ -9,8 +9,8 @@ module.exports = {
     main: "./src/index.tsx",
   },
   output: {
-    filename: "[name].[contenthash].js",
-    chunkFilename: "[name].[contenthash].chunk.js",
+    filename: "[name].[hash].js",
+    chunkFilename: "[name].[hash].chunk.js",
     path: resolve(__dirname, "../dist"),
   },
   resolve: {
