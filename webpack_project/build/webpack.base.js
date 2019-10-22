@@ -65,11 +65,13 @@ module.exports = {
     usedExports: true,
     splitChunks: {
       chunks: "all",
-      cacheGroup: {
-        test: /[\\/]node_modules[\\/]/,
-        priority: -10,
-        name: 'vendors',
-      }
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          name: 'vendors',
+        },
+      },
     },
   },
 };
