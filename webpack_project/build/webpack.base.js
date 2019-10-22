@@ -59,9 +59,17 @@ module.exports = {
     })
   ],
   optimization: {
+    runtimeChunk: {
+      name: 'runtime',
+    },
     usedExports: true,
     splitChunks: {
       chunks: "all",
+      cacheGroup: {
+        test: /[\\/]node_modules[\\/]/,
+        priority: -10,
+        name: 'vendors',
+      }
     },
   },
 };
