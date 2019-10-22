@@ -61,7 +61,10 @@ module.exports = {
     // 往index.html添加内容
     new AddAssetHtmlWebpackPlugun({
       filepath: resolve(__dirname, '../dll/vendors.dll.js'),
-    })
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: resolve(__dirname, '../dll/vendors.manifest.json'),
+    }),
   ],
   optimization: {
     runtimeChunk: {
