@@ -1,8 +1,26 @@
 const { resolve } = require("path");
+const { readdirSync } = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const AddAssetHtmlWebpackPlugun = require('add-asset-html-webpack-plugin');
 const webpack = require("webpack");
+
+const dllFiles = readdirSync(resolve(__dirname, '../dll'));
+const dllPlugins = dllFiles.map(filename => {
+  const dllReg = /.*\.dll.js/;
+  const manifestReg = /.*\.manifest.json/;
+
+  if(dllReg.test(filename)) {
+    return new AddAssetHtmlWebpackPlugun({
+      filepath: resolve(__dirname, '../dll', filename),
+    });
+  }
+  if(manifestReg.test(filename)) {
+    return new webpack.DllReferencePlugin({
+      manifest: resolve(__dirname, '../dll', filename),
+    });
+  }
+})
 
 module.exports = {
   entry: {
@@ -58,13 +76,7 @@ module.exports = {
       // 当发现一个模块里用了$，就会在该模块引入jquery
       $: 'jquery',
     }),
-    // 往index.html添加内容
-    new AddAssetHtmlWebpackPlugun({
-      filepath: resolve(__dirname, '../dll/vendors.dll.js'),
-    }),
-    new webpack.DllReferencePlugin({
-      manifest: resolve(__dirname, '../dll/vendors.manifest.json'),
-    }),
+    ...dllPlugins,
   ],
   optimization: {
     runtimeChunk: {
