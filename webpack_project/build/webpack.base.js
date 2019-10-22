@@ -1,6 +1,7 @@
 const { resolve } = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const AddAssetHtmlWebpackPlugun = require('add-asset-html-webpack-plugin');
 const webpack = require("webpack");
 
 module.exports = {
@@ -50,12 +51,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: resolve(__dirname, "../index.html"),
     }),
-    new CleanWebpackPlugin([resolve(__dirname, "../dist")], {
+    new CleanWebpackPlugin(['dist'], {
       root: resolve(__dirname, "../"),
     }),
     new webpack.ProvidePlugin({
       // 当发现一个模块里用了$，就会在该模块引入jquery
       $: 'jquery',
+    }),
+    // 往index.html添加内容
+    new AddAssetHtmlWebpackPlugun({
+      filepath: resolve(__dirname, '../dll/vendors.dll.js'),
     })
   ],
   optimization: {
