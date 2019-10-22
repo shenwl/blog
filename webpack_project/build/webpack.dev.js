@@ -28,6 +28,7 @@ module.exports = {
     ]
   },
   devServer: {
+    overlay: true,
     contentBase: '../dist',
     open: true,
     hot: true,
